@@ -206,7 +206,6 @@ function delFavrots(key){
         let allFavrots = getCookies().substring(1).split(",");
         allFavrots.splice(pos,1);
         let temp = allFavrots.toString();
-        console.log(temp);
         setCookies(temp, 30, 2);
         // Set button favorts
         document.getElementById("favrots_" + key).innerHTML = '<div class="like_button" id ="favrotsButton_' + key + '" onclick="addFavrots('+ key +')">'
