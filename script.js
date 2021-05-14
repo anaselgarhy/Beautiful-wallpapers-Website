@@ -1,9 +1,9 @@
 // List of alpums elmints
 var alpums =[
-    {'title':'Art', 'url':'art.html', 'mainUrl':'imges/Art'},
-    {'title':'Nature', 'url':'nature.html','mainUrl':'imges/Nature'},
-    {'title':'Cats', 'url':'cats.html','mainUrl':'imges/Cats'}
-]
+    {'title':'Art', 'url':'Art.html', 'mainUrl':'imges/Art'},
+    {'title':'Nature', 'url':'Nature.html','mainUrl':'imges/Nature'},
+    {'title':'Cats', 'url':'Cats.html','mainUrl':'imges/Cats'}
+];
 
 function set(num){
     document.getElementById("title_of_alpum").innerHTML = alpums[num].title;
