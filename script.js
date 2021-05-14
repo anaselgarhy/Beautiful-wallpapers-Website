@@ -129,7 +129,7 @@ function setCookies(cvalue, exdays, option){
     else
     {
         let tempSize = cvalue.length -1;
-        document.cookie = temp + cvalue + (cvalue == ""? "":(cvalue[tempSize] != ",")? ",;":";") + "expires="+ endDate.toUTCString() + ";path=/" + alpums[current_alpum].url;
+        document.cookie = temp + cvalue + (cvalue == ""? ";": ((cvalue[tempSize] != ",")? ",;":";")) + "expires="+ endDate.toUTCString() + ";path=/" + alpums[current_alpum].url;
     } 
 }
 // Get cookie
@@ -157,7 +157,6 @@ function delCookies(){
 /// This function want tow parameters, one parameter kye to you want cheak or search and tow parameter option to you want use
 // Cheack alrdy in favrots
 function cheackFavrots(key, option){
-    let upper, lower, mid;
     let fav = new Array();
     // Get favrots in current alpum
     let favrots = getCookies().substring(1); // del "=" from return value
@@ -207,7 +206,8 @@ function delFavrots(key){
         let allFavrots = getCookies().substring(1).split(",");
         allFavrots.splice(pos,1);
         let temp = allFavrots.toString();
-        setCookies(temp, 2);
+        console.log(temp);
+        setCookies(temp, 30, 2);
         // Set button favorts
         document.getElementById("favrots_" + key).innerHTML = '<div class="like_button" id ="favrotsButton_' + key + '" onclick="addFavrots('+ key +')">'
         document.getElementById("favrotsButton_" + key).innerHTML = '<p>Add to my favrots</p>';
